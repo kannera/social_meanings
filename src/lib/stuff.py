@@ -35,3 +35,10 @@ def frequency_index(datatype):
 
     index = [x[0] for x in data]
     return index
+
+def frequency_table(datatype):
+    data = open_csv("../data/resources/"+datatype+"_freqmap.csv")
+    return [[int(y) for y in x[2:]] for x in data]
+
+def list_to_fdict(A):
+    return {i:A.count(i) for i in set(A)}
